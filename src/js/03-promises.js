@@ -26,7 +26,7 @@ function formSubmit() {
     position += 1;
   }
    
-  console.log(delayVal); 
+  // console.log(delayVal); 
   
  };
 
