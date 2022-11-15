@@ -10,15 +10,15 @@ const submitBtn = document.querySelector('button[type=submit]');
 
 
 submitBtn.addEventListener('click', formSubmit);
- 
+submitBtn.disabled = false;
 function formSubmit() {
   event.preventDefault();
   let position = 1;
   let delayVal = Number(formDelay.value);
   let stepVal =  Number(formStep.value);
   let amountVal = Number(formAmount.value);
-  console.log(delayVal);
-  console.log(stepVal);
+ 
+  submitBtn.disabled = true;
 
   for (let i = 1; i <= amountVal; i += 1) {
     createPromise(i, delayVal);
