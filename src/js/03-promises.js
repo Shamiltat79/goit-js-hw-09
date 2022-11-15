@@ -13,10 +13,12 @@ submitBtn.addEventListener('click', formSubmit);
  
 function formSubmit() {
   event.preventDefault();
-  let position = 0;
-  let delayVal = formDelay.value;
-  let stepVal =  formStep.value;
-  let amountVal = formAmount.value;
+  let position = 1;
+  let delayVal = Number(formDelay.value);
+  let stepVal =  Number(formStep.value);
+  let amountVal = Number(formAmount.value);
+  console.log(delayVal);
+  console.log(stepVal);
 
   for (let i = 1; i <= amountVal; i += 1) {
     createPromise(i, delayVal);
@@ -24,7 +26,7 @@ function formSubmit() {
     position += 1;
   }
    
-   
+  console.log(delayVal); 
   
  };
 
@@ -38,7 +40,7 @@ function createPromise(position, delay) {
         reject({ position, delay });
     
       }
-    }, );
+    }, delay);
  
   });
 promise.then(({ position, delay }) => {
